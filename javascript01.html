@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트의 기본01 - 변수의 선언과 사용</title>
+    <title>자바스크립트 기본01 - 변수의 선언과 사용</title>
 </head>
 <body>
     <div id="result"></div>
@@ -15,9 +15,9 @@
     </ul>
     <hr>
     <nav>
-        <a href="">메뉴</a>
-        <a href="">메뉴</a>
-        <a href="">메뉴</a>
+        <a href="">메뉴1</a>
+        <a href="">메뉴2</a>
+        <a href="">메뉴3</a>
     </nav>
     <hr>
     <ul class="lst">
@@ -27,62 +27,53 @@
         <li class="item4"></li>
     </ul>
     <div id="res2"></div>
-    <button type="button" onclick="fnc3()" id="btn1">인라인 이벤트 발생</button>
-    <button type="button" id="btn2">DOM 탐색 이벤트 발생</button>
+    <button type ="button" onclick="fnc3()" id="btn1">인라인 이벤트 발생</button>
+    <button type ="button" id="btn2">DOM 탐색 이벤트 발생</button>
+
     <script>
-    //변수, 객체, 함수, 메소드, 이벤트, DOM 컨트롤
+        var data1 = "김현경";
+        let data2 = "김진영";
+        const data3 = "이옥순";
+        console.log(data1);
 
-    //자바 언어처럼 타입지시자를 사용하지 않으며, 값을 대입하면, 형(Type)이 자동으로 정의 또는 변환됨
-    //int a = 100;
-    var data1 = "김기태";   //var는 재선언이 가능하고, 값도 언제나 변경할 수 있음.  
-    let data2 = "구예진";   //let은 재선언이 불가능하나, 값은 언제나 변경할 수 있음.
-    const data3 = "백준철"; //const(constant) 는 재선언X, 값 변경X => 상수
-    console.log(data1);
-    
-    var data1 = 1004;   //재선언 및 값 초기화
-    data2 = 7979;       //값 변경
+        // 재선언 및 값초기화 
+        var data1 = 1004;
+        data2 = 7979;
 
-    //함수 정의 문법
-    function fnc1() {  //함수는 호출하여야만 실행됨.
-        document.write("출력");
-    }
-    var fnc2 = function() { alert("알림"); }
+        // 함수 정의 문법
+        function fnc1(){ document.write("출력");}
+        var fnc2 = function() { alert("알림");}
 
-    //간단한 객체 정의 문법
-    var obj = {
-        name:"김기태",  //필드
-        age:29,
-        height:173.8,
-        method1:function(num1){ 
-            document.getElementById("res2").innerHTML = "<h2>김기태천재</h2>";
-        }
-    };
+        //간단한 객체 정의 문법
+        var obj = {
+            name : "김현경", age : 29, height : 155.0, 
+            method1:function(num1){
+                document.getElementById("res2").innerHTML = "<h2>김현경천재</h2>";
+            }
+        };
 
-    document.getElementById("res2").innerText = obj.name + obj.age + obj.height;
-    //메소드 호출 방법
-    obj.method1();
-
-    function fnc3() {
-        var result = document.getElementById("result"); //태그의 아이디에 의한 접근
-        var el = document.getElementsByClassName("lst");  //태그의 클래스에 의한 접근 - 배열 el[0], el[1]
-        var a = document.getElementsByTagName("a"); //태그의 태그명에 의한 접근 : 배열 a[0], a[1], a[2]
-        var res2 = document.querySelector("#result");
-        var item = document.querySelectorAll(".lst li"); //배열 item[0] ~ item[7]
+        document.getElementById("res2").innerText = obj.name + obj.age + obj.height;
         
-        result.innerText = data2;
-        for(var i=0;i<item.length;i++){ //item의 요소 수 만큼 반복 수행
-            item[i].innerHTML = "<strong>"+data3+"</strong>";
-        }
-    }
+        obj.method1();
 
-    var btn2 = document.getElementById("btn2");
-    btn2.addEventListener("click", function(){
-        fnc3();
-    });
-    /*
-    fnc1();
-    fnc2();
-    */
+        function fnc3(){
+            var result = document.getElementById("result");
+            var el = document.getElementsByClassName("lst");
+            var a = document.getElementsByTagName("a");
+            var res2 = document.querySelector("#result");
+            var item = document.querySelectorAll(".lst li");
+
+            result.innerText = data2;
+            for(var i=0;i<item.length;i++){
+                item[i].innerHTML = "<strong>"+data3+"</strong>";
+            }
+        }
+
+        var btn2 = document.getElementById("btn2");
+        btn2.addEventListener("click",function(){
+            fnc3();
+        });
+        
     </script>
 </body>
 </html>
