@@ -4,12 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자바스크립트 응용01 - 계산기</title>
+    <style>
+        @font-face {
+        font-family: "press1";
+        src: url("./fonts/PressStart2P-Regular.ttf");
+    }
+    *{font-family:"press1";}
+
+    .cal_wrap{
+    background-color: #06597a; 
+    width: 350px;
+    height: 500px;
+    margin-left: 420px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    }
+
+    #display {
+    background-color:#f09393 ;
+    height: 70px; width: 320px;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 30px;
+    text-align: right;
+    vertical-align: middle;
+    padding: 25px 15px;
+    }
+
+    .btn_box {
+    background-color: #ffffff;
+    height:330px; width:350px;
+    margin-top: 15px; 
+    border: 2px;
+    padding: 25px 15px;
+    border-radius: 10px;
+    }
+
+    button {
+    border-radius: 10px;
+    text-align: center;
+    width:70px; height: 60px;
+    font-size :15px;
+    }
+
+    #btn1,#btn2,#btn3, #btn4,#btn5,#btn6,
+    #btn7,#btn8,#btn9, #btn0,#pt {
+    background-color : #bdb2b2;
+    }
+
+    #div, #mul, #minus, #plus{
+    background-color: #313132;
+    color:#ffffff;
+    }
+
+    #res {
+    background-color:#f09393
+    }
+
+
+    </style>
 </head>
 <body>
     <div id="calculator">
         <div class="cal_wrap">
             <input type="text" id="display">
-            <table>
+            <table class="btn_box">
                 <tr>
                     <td><button id="btn7" onclick="cal(7)">7</button></td>
                     <td><button id="btn8" onclick="cal(8)">8</button></td>
