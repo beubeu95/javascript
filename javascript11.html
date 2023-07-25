@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자바스크립트 응용01 - 계산기</title>
-    
 </head>
 <body>
     <div id="calculator">
@@ -21,7 +20,7 @@
                     <td><button id="btn4" onclick="cal(4)">4</button></td>
                     <td><button id="btn5" onclick="cal(5)">5</button></td>
                     <td><button id="btn6" onclick="cal(6)">6</button></td>
-                    <td><button id="mul" onclick="cal('*')>*</button></td>
+                    <td><button id="mul" onclick="cal('*')">*</button></td>
                 </tr>
                 <tr>
                     <td><button id="btn1" onclick="cal(1)">1</button></td>
@@ -38,14 +37,16 @@
             </table>
         </div>
     </div>
-
     <script>
-    var display = document.getElementById("display"); 
+    var display = document.getElementById("display");
     function cal(btn){
         display.value = display.value + btn;
-    }
+    }    
     function rt(){ //eval()
-        display.value = "";
+        var display = document.getElementById("display");
+        var display = eval(display.value);
+        document.getElementById("display").value =display;
+        
     }
     </script>
 </body>
