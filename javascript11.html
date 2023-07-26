@@ -14,7 +14,7 @@
     .cal_wrap{
     background-color: #06597a; 
     width: 350px;
-    height: 500px;
+    height: 600px;
     margin-left: 420px;
     border-radius: 10px;
     padding: 10px 20px;
@@ -31,9 +31,11 @@
     padding: 25px 15px;
     }
 
+    
+
     .btn_box {
     background-color: #ffffff;
-    height:330px; width:350px;
+    height:430px; width:350px;
     margin-top: 15px; 
     border: 2px;
     padding: 25px 15px;
@@ -70,6 +72,9 @@
             <input type="text" id="display">
             <table class="btn_box">
                 <tr>
+                    <td><button id="clear" onclick="cl()">CLEAR</button></td>
+                </tr>
+                <tr>
                     <td><button id="btn7" onclick="cal(7)">7</button></td>
                     <td><button id="btn8" onclick="cal(8)">8</button></td>
                     <td><button id="btn9" onclick="cal(9)">9</button></td>
@@ -101,11 +106,15 @@
     function cal(btn){
         display.value = display.value + btn;
     }    
-    function rt(){ //eval()
+    function rt(){ //eval() : 문자열로 구성된 계산식을 실제 계산가능한 구조로 변경
         var display = document.getElementById("display");
         var display = eval(display.value);
         document.getElementById("display").value =display;
         
+    }
+    function cl(){ //초기화
+        display.value="";
+        display.focus();
     }
     </script>
 </body>
